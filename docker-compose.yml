@@ -1,0 +1,34 @@
+version: '3'
+services:
+  master:
+    image: wuwei:hadoop-namenode
+    networks:
+      hadoop_cluster:
+        aliases:
+         - hadoop-master
+    ports:
+     - "50070:50070"
+    depends_on:
+     - slave1
+     - slave2
+    tty: true
+    stdin_open: true
+  slave1:
+    image: wuwei:hadoop-datanode
+    networks:
+      hadoop_cluster:
+        aliases:
+         - hadoop-slave1
+    tty: true
+    stdin_open: true
+  slave2:
+    image: wuwei:hadoop-datanode
+    networks:
+      hadoop_cluster:
+        aliases:
+         - hadoop-slave2
+    tty: true
+    stdin_open: true
+networks:
+  hadoop_cluster:
+    driver: bridge
