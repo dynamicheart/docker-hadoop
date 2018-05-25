@@ -1,6 +1,7 @@
 #!/bin/sh
+echo -n "" > namenode/slaves
 for i in $(seq 1 $1); do
-    echo hadoop-slave$i > namenode/slaves
+    echo hadoop-slave$i >> namenode/slaves
 done
 cd base
 docker build . -t wuwei:hadoop-base
