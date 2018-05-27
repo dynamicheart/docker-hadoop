@@ -1,0 +1,28 @@
+<configuration>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>hadoop-master</value>
+    </property>
+    <property>
+      <description>Indicate to clients whether Timeline service is enabled or not.
+      If enabled, the TimelineClient library used by end-users will post entities
+      and events to the Timeline server.</description>
+      <name>yarn.timeline-service.enabled</name>
+      <value>true</value>
+    </property>
+    
+    <property>
+      <description>The setting that controls whether yarn system metrics is
+      published on the timeline server or not by RM.</description>
+      <name>yarn.resourcemanager.system-metrics-publisher.enabled</name>
+      <value>true</value>
+    </property>
+    
+    <property>
+      <description>Indicate to clients whether to query generic application
+      data from timeline history-service or not. If not enabled then application
+      data is queried only from Resource Manager.</description>
+      <name>yarn.timeline-service.generic-application-history.enabled</name>
+      <value>true</value>
+    </property>
+</configuration>

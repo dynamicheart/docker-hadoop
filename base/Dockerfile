@@ -23,6 +23,10 @@ ENV JAVA_HOME=/docker-java-home
 RUN mkdir -p /root/.ssh
 COPY ssh_config /root/.ssh/config
 COPY hadoop-env.sh $HADOOP_CONF_DIR/hadoop-env.sh
+COPY core-site.xml $HADOOP_CONF_DIR/core-site.xml
+COPY hdfs-site.xml $HADOOP_CONF_DIR/hdfs-site.xml
+COPY yarn-site.xml $HADOOP_CONF_DIR/yarn-site.xml
+COPY mapred-site.xml $HADOOP_CONF_DIR/mapred-site.xml
 RUN mkdir /var/run/sshd
 EXPOSE 22
 

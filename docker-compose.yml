@@ -9,6 +9,10 @@ services:
     ports:
      - "50070:50070"
      - "50090:50090"
+     - "8088:8088"
+     - "8188:8188"
+     - "19888:19888"
+     - "10200:10200"
     depends_on:
      - slave1
      - slave2
@@ -22,6 +26,7 @@ services:
          - hadoop-slave1
     ports:
      - "50075:50075"
+     - "8042:8042"
     tty: true
     stdin_open: true
   slave2:
@@ -32,6 +37,7 @@ services:
          - hadoop-slave2
     ports:
      - "50076:50075"
+     - "8043:8042"
     tty: true
     stdin_open: true
 networks:
