@@ -1,6 +1,6 @@
 #!/bin/sh
 echo -n "" > namenode/slaves
-for i in $(seq 1 $1); do
+for i in $(seq 1 2); do
     echo hadoop-slave$i >> namenode/slaves
 done
 cd base
@@ -13,3 +13,4 @@ cd datanode
 docker build . -t wuwei:hadoop-datanode
 cd -
 
+docker-compose up -d --force-recreate

@@ -1,12 +1,12 @@
 <configuration>
 	<property>
-    	<name>mapreduce.jobhistory.address</name>
-    	<value>hadoop-master:10020</value>
-  	</property>
-  	<property>
-    	<name>mapreduce.jobhistory.webapp.address</name>
-    	<value>hadoop-master:19888</value>
-  	</property> 
+		<name>mapreduce.jobhistory.address</name>
+		<value>hadoop-master:10020</value>
+	</property>
+	<property>
+		<name>mapreduce.jobhistory.webapp.address</name>
+		<value>hadoop-master:19888</value>
+	</property>
     <property>
         <name>mapreduce.jobhistory.done-dir</name>
 		<value>${yarn.app.mapreduce.am.staging-dir}/history/done</value>
@@ -19,5 +19,9 @@
 		<name>yarn.app.mapreduce.am.staging-dir</name>
 		<value>/tmp/hadoop-yarn/staging</value>
 	</property>
-
+	<property>
+		<name>mapreduce.framework.name</name>
+		<value>yarn</value>
+		<description>The runtime framework for executing MapReduce jobs. Can be one of local, classic or yarn.</description>
+	</property>
 </configuration>
